@@ -31,7 +31,7 @@ Linux-компьютер — это способ установить Python с�
 позволяют многочисленные online-сервисы. Для наших целей вполне подойдут
 следующие два:
 
-- [Classic Notebook](https://hub.gke2.mybinder.org/user/ipython-ipython-in-depth-a63o03zi/notebooks/binder/Index.ipynb)
+- [Classic Notebook из "Try Jupyter"](https://jupyter.org/try)
 - [Colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb?hl=ru)
 
 ## Примеры ссылок
