@@ -52,10 +52,8 @@ Linux-компьютер — это способ установить Python с�
     - [**Python Tutorial** This is a detailled online introduction course into the programming language Python suitable for self-study](https://python-course.eu/python-tutorial/)
     - [**Object Oriented Programming** Introduction to the chapter on Object Oriented Programming (OOP) with Python](https://python-course.eu/oop/)
     - [**Advanced Python** Python topics that are too difficult for beginners, including topics like functional programming and generators](https://python-course.eu/advanced-python/)
-    - [**Applications of Python** This chapter contains Forks, Pipes, Text Processing and Classification, Graphs, Finite State Machines, Turing Machines](https://python-course.eu/applications-python/)
     - [**Numerical Programming** Overview of the Python modules numPy, SciPi, Pandas, and Matplotlib necessary to use Python efficiently for numerical purposes](https://python-course.eu/numerical-programming/)
     - [**Machine Learning** Examines computers' capability to automatically learn from data](https://python-course.eu/machine_learning.php)
-    - [**Tkinter** Tkinter is the Python interface for Tk](https://python-course.eu/python_tkinter.php)
 
 ## Стартовые материалы
 
