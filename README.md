@@ -57,7 +57,7 @@ Linux-компьютер — это способ установить Python с�
 
 ## Стартовые материалы
 
-- [Вводная лекция для магистров-физиков](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
+- [Вводная лекция для первокурсников-программистов](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
 - [Кое-что о SymPy](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
 - [Работа с библиотекой SymPy](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy1.ipynb)
 - [Работа с библиотекой SymPy — часть 2](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy2.ipynb)
