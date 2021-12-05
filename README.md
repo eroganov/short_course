@@ -2,9 +2,10 @@
 
 ## Введение
 
-Будет текст: о чём курс
+В нашем курсе будут рассмотрены следующие темы:
 
-
+- программирование на языке Python в директивном и объектно-ориентированном стилях, тестирование программ;
+- знакомство с библиотеками NymPy, SciPy, Matplotlib, Pandas и Scikit-Learn.
 
 ## Где размещены материалы
 
@@ -12,7 +13,7 @@
 
 ## Рекомендуемое ПО
 
-### Лучший вариант
+#### Лучший вариант
 
 Установить [Анаконду](https://www.anaconda.com/products/individual) на
 Linux-компьютер — это способ установить Python сразу вместе со всеми самыми
@@ -20,12 +21,12 @@ Linux-компьютер — это способ установить Python с�
 программное обеспечение и Вы сможете воспользоваться как мощью командной
 строки Linux, так и богатством возможностей экосистемы языка Python.
 
-### Допустимый вариант
+#### Допустимый вариант
 
 Установить [Анаконду](https://www.anaconda.com/products/individual) на
 компьютер с иной операционной системой.
 
-### Если предыдущие варианты невозможны
+#### Если предыдущие варианты невозможны
 
 Почти всё можно сделать, используя Jupyter Notebook, работать с которым
 позволяют многочисленные online-сервисы. Для наших целей вполне подойдут
@@ -34,8 +35,33 @@ Linux-компьютер — это способ установить Python с�
 - [Try Classic Notebook из "Try Jupyter"](https://jupyter.org/try)
 - [Colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb?hl=ru)
 
-## Примеры ссылок
+## Официальная документация
 
-- [html](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
-- [ipynb](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
+- [The Python Tutorial](https://docs.python.org/3/tutorial/)
+- [The Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/)
+- [SymPy Tutorial](https://docs.sympy.org/latest/tutorial/)
+- [NumPy Manual](https://numpy.org/doc/stable/)
+- [Numpy and Scipy Documentation](https://docs.scipy.org/doc/)
+- [Matplotlib: Visualization with Python](https://matplotlib.org/)
+- [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
+- [Scikit-Learn — Machine Learning in Python](https://scikit-learn.org/stable/)
+
+## Рекомендуемые руководства
+
+- [Python courses: online, onsite and offsite](https://python-course.eu/)
+    - [**Python Tutorial** This is a detailled online introduction course into the programming language Python suitable for self-study](https://python-course.eu/python-tutorial/)
+    - [**Object Oriented Programming** Introduction to the chapter on Object Oriented Programming (OOP) with Python](https://python-course.eu/oop/)
+    - [**Advanced Python** Python topics that are too difficult for beginners, including topics like functional programming and generators](https://python-course.eu/advanced-python/)
+    - [**Applications of Python** This chapter contains Forks, Pipes, Text Processing and Classification, Graphs, Finite State Machines, Turing Machines](https://python-course.eu/applications-python/)
+    - [**Numerical Programming** Overview of the Python modules numPy, SciPi, Pandas, and Matplotlib necessary to use Python efficiently for numerical purposes](https://python-course.eu/numerical-programming/)
+    - [**Machine Learning** Examines computers' capability to automatically learn from data](https://python-course.eu/machine_learning.php)
+    - [**Tkinter** Tkinter is the Python interface for Tk](https://python-course.eu/python_tkinter.php)
+
+## Стартовые материалы
+
+- [Вводная лекция для магистров-физиков](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
+- [Кое-что о SymPy](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
+- [Работа с библиотекой SymPy](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
+- [Работа с библиотекой SymPy — часть 2](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
+
 
