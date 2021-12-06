@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Е.А. Роганов">
+  <title>Знакомство с языком Python</title>
+  <link rel="stylesheet" href="python1_files/Highlighting.css">
+  <link rel="stylesheet" href="python1_files/markdown.css">
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+<body>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+<br>
+<header>
+<h1 class="title">Знакомство с языком Python</h1>
+<p class="author">Е.А. Роганов</p>
+<p class="date">v.4.2, 5 декабря 2021 года</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#постановка-задачи">Постановка задачи</a></li>
+<li><a href="#обсуждение-алгоритма-решения">Обсуждение алгоритма решения</a></li>
+<li><a href="#запись-алгоритма-в-виде-программы">Запись алгоритма в виде программы</a></li>
+<li><a href="#важнейшие-свойства-программ">Важнейшие свойства программ</a>
+<ul>
+<li><a href="#правильность-программы">Правильность программы</a></li>
+<li><a href="#временная-сложность-программы">Временна́я сложность программы</a></li>
+</ul></li>
+</ul>
+</nav>
+<blockquote>
+<p>«Я слышу и я забываю; я вижу и я запоминаю; я делаю и я понимаю.»</p>
+<div style="text-align:right;">
+— <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D1%83%D1%86%D0%B8%D0%B9">Конфуций</a>
+</div>
+</blockquote>
+<p>Помните: для достижения успеха <strong>необходимо постоянно решать задачи, и писать программы!</strong></p>
+<h2 id="введение">Введение</h2>
+<p>Для работы с этим материалом необходимы:</p>
+<div class="nonincremental">
+<ul>
+<li>браузер (для чтения текста материала и копирования кода программ);</li>
+<li>терминал (для набора и выполнения команд);</li>
+<li>редактор (для ввода и редактирования кода программ).</li>
+</ul>
+</div>
+<blockquote>
+<p>В случае невозможности работы в ОС Linux многие (<em>но не все!</em>) действия могут быть выполнены в браузере с использованием блокнота (так мы будем называть Jupyter Notebook).</p>
+</blockquote>
+<p>&lt;&gt; Почти полноценной заменой локально установленного Linux 
+является &gt; использование возможностей Jupyter Hub, но этому ещё надо 
+научиться.</p>
+<h2 id="постановка-задачи">Постановка задачи</h2>
+<p>Напишите программу на языке Python, читающую со стандартного ввода целое <span style="display: inline-block;">число <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="0"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-1-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span></span> и печатающую на стандартный вывод сумму всех целых чисел между единицей и целым <span style="display: inline-block;">числом <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="1"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-2-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-2-TEX-I-1D45B"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span></span> включительно.</p>
+<p><strong>Пример 1</strong></p>
+<p><em>Ввод:</em> <code>1</code></p>
+<p><em>Вывод:</em> <code>1</code></p>
+<p><strong>Пример 2</strong></p>
+<p><em>Ввод:</em> <code>3</code></p>
+<p><em>Вывод:</em> <code>6</code></p>
+<p>Программу, код которой размещён в файле с именем <code>filename.py</code>, можно выполнить, набрав в терминале следующую команду:</p>
+<pre class="shell"><code>python filename.py</code></pre>
+<p><em>Стандартный ввод</em> и <em>стандартный вывод</em>&nbsp;— потоки 
+ввода-вывода в различных операционных системах, которые позволяют 
+процессу, создаваемому во время интерпретации Python-кода, 
+взаимодействовать с «внешним миром», читая (в случае стандартного ввода)
+ или записывая (для стандартного вывода) какие-то данные. По умолчанию 
+стандартный ввод ассоциирован с клавиатурой, а стандартный вывод&nbsp;— с
+ терминалом, в котором выполнена команда запуска интерпретатора.</p>
+<p>Очень легко перенаправить стандартный ввод и/или стандартный вывод. Так команда</p>
+<pre class="shell"><code>python filename.py &lt;data.txt &gt;result.dat</code></pre>
+<p>будет читать данные не с клавиатуры, а из файла с именем <code>data.txt</code>, её вывод окажется в файле <code>result.txt</code>.
+ Если второй из этих файлов существовал, то его предыдущее содержимое 
+будет уничтожено. Для добавления информации в конец существующего файла 
+вместо&nbsp;<code>&gt;</code> следует использовать&nbsp;<code>&gt;&gt;</code>, например</p>
+<pre class="shell"><code>python filename.py &lt;data.txt &gt;&gt;result.dat</code></pre>
+<h2 id="обсуждение-алгоритма-решения">Обсуждение алгоритма решения</h2>
+<p>Каков алгоритм решения этой задачи?</p>
+<p>Имея алгоритм, можно относительно легко записать его (закодировать) 
+на любом известном языке программирования. Для этого, конечно, надо 
+знать используемый язык…</p>
+<p>Основная масса ошибок при решении различных задач заключается именно в
+ некорректном алгоритме. Хотя ошибиться можно и на этапе кодирования 
+(написания программы).</p>
+<p>Алгоритм решения рассматриваемой задачи предполагает выполнение 
+повторяющихся действий, что в различных языках программирования часто 
+реализуется с помощью так называемых <em>циклов</em>. В данном случае к 
+некоторой переменной, в которой будет накапливаться требуемая сумма, в 
+цикле надо добавлять очередное число. Начать этот процесс можно с 
+добавления единицы, завершить следует добавлением <span style="display: inline-block;">величины <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="2"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.439ex" role="img" focusable="false" viewBox="0 -442 878 636" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-3-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-3-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-3-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2C" xlink:href="#MJX-3-TEX-N-2C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>,</mo></math></mjx-assistive-mml></mjx-container></span></span> а добавляемую величину на каждом шаге увеличивать на один.</p>
+<h2 id="запись-алгоритма-в-виде-программы">Запись алгоритма в виде программы</h2>
+<p>Вот как можно попытаться реализовать этот алгоритм на языке Python:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> n:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code></pre></div>
+<p>Даже человек, ранее никогда не слышавший о языке Python ничего, в 
+состоянии понять почти всё в этой программе. Тем не менее здесь следует 
+остановиться и тщательно обсудить каждый символ кода.</p>
+<p>Оператор присваивания в языке Python, как и во многих других языках программирования, имеет вид <code>имя_переменной = выражение</code>.</p>
+<p>Функция <code>input()</code> читает одну строку со стандартного ввода, а функция <code>int()</code> преобразует считанную строку в целое число (для получения действительного числа следует использовать функцию <code>float()</code>).</p>
+<p>Условие <code>i &lt;= n</code> цикла <code>while</code> проверяется перед началом выполнением цикла и после каждой его итерации. В случае его истинности выполняется <em>тело</em>
+ цикла, которое отделяется от условия двоеточием. Строки тела цикла 
+должны иметь одинаковый (положительный) отступ по сравнению со строкой 
+начала цикла. Рекомендуется использовать отступ величиной в 4 позиции.</p>
+<p>Функция <code>print()</code> печатает её аргумент на стандартный вывод.</p>
+<blockquote>
+<p>Если написанную программу запустит человек, не знающий, что именно 
+она делает, то у него может сложиться мнение, что программа «не 
+работает», так как программа будет ждать ввода числа, а человек&nbsp;— 
+какой-то активности от программы. Поэтому для интерактивных программ 
+(предполагающих взаимодействие с пользователем) любому вводу обычно 
+предшествует вывод текста-подсказки. Вывод результатов в них также 
+обычно содержит какие-то пояснения.</p>
+</blockquote>
+<blockquote>
+<p>Важно понимать, что программист не имеет права самостоятельно 
+выбирать тот или иной стиль общения с пользователем. Всё определяет 
+формулировка задача, которую часто называют <em>спецификацией</em>. <strong>Если поведение программы не соответствует её спецификации, то программа является неправильной!</strong></p>
+</blockquote>
+<p>Вот как может быть изменён вышеприведённый код для интерактивной программы:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Введите целое число -&gt; "</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> n:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Сумма целых чисел между единицей и числом </span><span class="sc">{n}</span><span class="ss"> включительно равна </span><span class="sc">{s}</span><span class="ss">"</span>)</span></code></pre></div>
+<p>Выполните эту программу несколько раз для различных <span style="display: inline-block;">значений <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="3"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.439ex" role="img" focusable="false" viewBox="0 -442 878 636" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-4-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-4-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-4-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2C" xlink:href="#MJX-4-TEX-N-2C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>,</mo></math></mjx-assistive-mml></mjx-container></span></span> например, 1, 2 и&nbsp;3.</p>
+<blockquote>
+<p><strong>Замечание 1.</strong> В языке Python чрезвычайно важным 
+является правильное форматирование кода программы. Если добавить в 
+первую позицию первой строки файла с программой пробел, то при попытке 
+запуска мы получим диагностическое сообщение <code>IndentationError: unexpected indent</code>&nbsp;— неожиданный отступ.</p>
+<p>Большая часть современных редакторов автоматически предлагает 
+правильные отступы, но догадаться, где должно завершиться тело цикла, не
+ может ни один из них. Если последнюю строку программы сдвинуть вправо 
+на четыре позиции, то программа останется синтаксически правильной, но 
+её поведение изменится. Посмотрите, как именно.</p>
+</blockquote>
+<blockquote>
+<p><strong>Замечание 2.</strong> Для записи строк в языке Python можно использовать как кавычки&nbsp;(<code>"</code>), так и апострофы&nbsp;(<code>'</code>). Разница проявляется только в тех случаях, когда в саму строку должен быть включён один из этих символов.</p>
+</blockquote>
+<blockquote>
+<p><strong>Замечание 3.</strong> В последней строке программы аргументом функции <code>print</code> является так называемая <code>f</code>-строка&nbsp;—
+ formatted string literal. Такие строки появились в языке Python только 
+начиная с версии&nbsp;3.6, а их достоинством является возможность <em>подстановки</em> в них значений переменных с помощью фигурных скобок, что очень удобно.</p>
+</blockquote>
+<h2 id="важнейшие-свойства-программ">Важнейшие свойства программ</h2>
+<h3 id="правильность-программы">Правильность программы</h3>
+<p><em>Правильной</em> называется программа, которая при всех допустимых
+ в соответствии с постановкой задачи входных данных заканчивает работу 
+за конечное время и выдаёт корректный результат.</p>
+<p>Является ли написанная программа правильной?</p>
+<p>Программа не является правильной!</p>
+<p>Для того чтобы доказать это, достаточно привести пример таких входных данных, на которых написанная программа «не работает».</p>
+<p>Можете это сделать?</p>
+<p>Исправить ошибку можно многими разными способами. Предложенный ниже 
+вариант использует отсутствующую во многих языках программирования 
+возможность <em>обмена значений двух переменных</em>, реализуемую с помощью так называемого <em>множественного присваивания</em>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&lt;</span> i:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    i, n <span class="op">=</span> n, i</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> n:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> s <span class="op">+</span> i</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code></pre></div>
+<h3 id="временная-сложность-программы">Временна́я сложность программы</h3>
+<p>Среди свойств, характеризующих алгоритмы (и программы, которые 
+являются просто записью алгоритмов на том или ином языке 
+программирования), <em>правильность</em> является важнейшим, но далеко не единственным показателем. Очень важной является <em>временна́я сложность</em> алгоритма, описывающая время его работы при различных входных данных.</p>
+<p>Написанная нами программа имеет <em>линейную сложность</em>, так как количество выполняемых в ней операций (как и время работы) прямо пропорционально <span style="display: inline-block;">величине <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="4"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-5-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-5-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-5-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2E" xlink:href="#MJX-5-TEX-N-2E"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>.</mo></math></mjx-assistive-mml></mjx-container></span></span> Не точно пропорционально, а лишь приблизительно. На языке математики это записывают <span style="display: inline-block;">так: <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="5"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.507ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2434 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-6-TEX-N-398" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM610 339Q610 428 590 495T535 598T463 651T384 668Q332 668 289 638T221 566Q168 485 168 339Q168 274 176 235Q189 158 228 105T324 28Q356 16 388 16Q415 16 442 24T501 54T555 111T594 205T610 339ZM223 263V422H263V388H514V422H554V263H514V297H263V263H223Z"></path><path id="MJX-6-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-6-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-6-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-6-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="398" xlink:href="#MJX-6-TEX-N-398"></use></g><g data-mml-node="mo" transform="translate(778,0)"><use data-c="28" xlink:href="#MJX-6-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(1167,0)"><use data-c="1D45B" xlink:href="#MJX-6-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(1767,0)"><use data-c="29" xlink:href="#MJX-6-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(2156,0)"><use data-c="2E" xlink:href="#MJX-6-TEX-N-2E"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>.</mo></math></mjx-assistive-mml></mjx-container></span></span></p>
+<p>Попробуйте выполнить нашу программу при <span style="display: inline-block;">значении <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="6"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.439ex" role="img" focusable="false" viewBox="0 -442 878 636" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-7-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-7-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-7-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2C" xlink:href="#MJX-7-TEX-N-2C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>,</mo></math></mjx-assistive-mml></mjx-container></span></span> равным миллиарду!</p>
+<p>Кто-то скажет: «язык Python слишком медленный». Действительно, 
+интерпретатор этого языка работает иногда (хотя и далеко не всегда) на 
+два порядка медленнее, чем программы, написанные на таких языках, как C,
+ C++ или Java. А <span style="display: inline-block;">ведь <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="7"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-8-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-8-TEX-I-1D45B"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span></span> может равняться и триллиону и квадриллиону и квинтиллиону…</p>
+<p>Использую более быстрый (компилируемый) язык можно добиться 
+сокращения времени работы программы в 100 раз, но чаще всего этого 
+бывает недостаточно. Проблема не в том, какой язык используется, а в 
+том, какой алгоритм применяется!</p>
+<p>При написании программы мы использовали слишком плохой (медленный) алгоритм!</p>
+<p>Предложите алгоритм получше.</p>
+<p>Подсказка: знание математики так часто помогает!</p>
+<p>В данном случае достаточно вспомнить формулу для суммы арифметической
+ прогрессии: полусумму первого и последнего её членов надо умножить на 
+количество слагаемых.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">1</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> n</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="bu">abs</span>(n) <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> k <span class="op">/</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>При запуске этой программы обнаруживается, что печатаемый ею 
+результат не является целым числом. Это связано с тем, что в Python3 
+результат операции деления&nbsp;(<code>/</code>) всегда является числом действительным (<code>float</code>). Целочисленное деление обозначается двумя слэшами&nbsp;(<code>//</code>), поэтому программу лучше исправить:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">1</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> n</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="bu">abs</span>(n) <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> k <span class="op">//</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>А как <em>вывести</em> формулу для суммы арифметической прогрессии?</p>
+<p>Сложность новой программы <em>константная</em> (<span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="8"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.532ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2445 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-9-TEX-N-398" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM610 339Q610 428 590 495T535 598T463 651T384 668Q332 668 289 638T221 566Q168 485 168 339Q168 274 176 235Q189 158 228 105T324 28Q356 16 388 16Q415 16 442 24T501 54T555 111T594 205T610 339ZM223 263V422H263V388H514V422H554V263H514V297H263V263H223Z"></path><path id="MJX-9-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-9-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-9-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="398" xlink:href="#MJX-9-TEX-N-398"></use></g><g data-mml-node="mo" transform="translate(778,0)"><use data-c="28" xlink:href="#MJX-9-TEX-N-28"></use></g><g data-mml-node="mn" transform="translate(1167,0)"><use data-c="31" xlink:href="#MJX-9-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(1667,0)"><use data-c="29" xlink:href="#MJX-9-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(2056,0)"><use data-c="29" xlink:href="#MJX-9-TEX-N-29"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, что означает практическую неизменность времени её выполнения при любых значениях <span style="display: inline-block;">параметра <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="9"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-10-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-10-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-10-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2E" xlink:href="#MJX-10-TEX-N-2E"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>.</mo></math></mjx-assistive-mml></mjx-container></span></span></p>
+<blockquote>
+<p>Для <em>очень больших</em> чисел увеличивается время выполнения любых
+ операций над ними, поэтому время работы нашей последней программы всё 
+же будет расти с <span style="display: inline-block;">ростом <span class="math inline"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" style="position: relative;" tabindex="0" ctxtmenu_counter="10"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs><path id="MJX-11-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-11-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-11-TEX-I-1D45B"></use></g><g data-mml-node="mo" transform="translate(600,0)"><use data-c="2E" xlink:href="#MJX-11-TEX-N-2E"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>.</mo></math></mjx-assistive-mml></mjx-container></span></span></p>
+</blockquote>
+<p>Заметим, что вместо стандартной конструкции <code>if-else</code> в подобных случаях в других языках часто используют так называемый <em>тернарный оператор</em> <code>?:</code>. В языке Python такого тернарного оператора нет, в нём его заменяют следующей конструкцией:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> n <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">1</span> <span class="cf">else</span> <span class="bu">abs</span>(n) <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> k <span class="op">//</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Если попытаться дословно закодировать фразу «полусумму первого и 
+последнего её членов надо умножить на количество слагаемых», то 
+получится ошибочная программа</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> n <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="dv">1</span> <span class="cf">else</span> <span class="bu">abs</span>(n) <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((n <span class="op">+</span> <span class="dv">1</span>) <span class="op">//</span> <span class="dv">2</span> <span class="op">*</span> k)</span></code></pre></div>
+<p>В чём причина её неправильности?</p>
+<p>Программа может быть сделана ещё чуть-чуть более быстрой и простой:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((n <span class="op">+</span> <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> <span class="bu">abs</span>(n <span class="op">-</span> <span class="dv">1</span>)) <span class="op">//</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Всё ли в ней Вам понятно?</p>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['\\[','\\]']],
+    processEscapes: false,
+    processRefs: true,
+    processEnvironments: true,
+    macros: {
+      sh: "{\\mathop{\\mathrm{sh}\\ }\\nolimits}",
+      ch: "{\\mathop{\\mathrm{ch}\\ }\\nolimits}",
+      tg: "{\\mathop{\\mathrm{tg}\\ }\\nolimits}",
+      ctg: "{\\mathop{\\mathrm{ctg}\\ }\\nolimits}",
+      arctg: "{\\mathop{\\mathrm{arctg}\\ }\\nolimits}",
+      arcctg: "{\\mathop{\\mathrm{arcctg}\\ }\\nolimits}",
+      th: "{\\mathop{\\mathrm{th}\\ }\\nolimits}",
+      cth: "{\\mathop{\\mathrm{cth}\\ }\\nolimits}",
+      cosec: "{\\mathop{\\mathrm{cosec}\\ }\\nolimits}",
+      Prob: "{\\mathop{\\mathsf{P}}\\nolimits}",
+      Variance: "{\\mathop{\\mathsf{D}}\\nolimits}",
+      nod: "{\\mathop{\\mathrm{н.о.д.}}\\nolimits}",
+      nok: "{\\mathop{\\mathrm{н.о.к.}}\\nolimits}",
+      NOD: "{\\mathop{\\mathrm{НОД}}\\nolimits}",
+      NOK: "{\\mathop{\\mathrm{НОК}}\\nolimits}",
+      Proj: "{\\mathop{\\mathrm{Пр}}\\nolimits}"
+    }
+  },
+  options: {
+    skipHtmlTags: ['script','noscript','style','textarea','pre','code'],
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  svg: {
+    displayAlign: 'left'
+  }
+};
+</script>
+<script src="python1_files/tex-svg-full.js" type="text/javascript"></script>
+<br>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+
+
+</body></html>

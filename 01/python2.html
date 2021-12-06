@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Е.А. Роганов">
+  <title>Официальная документация по языку Python</title>
+  <link rel="stylesheet" href="python2_files/Highlighting.css">
+  <link rel="stylesheet" href="python2_files/markdown.css">
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+<br>
+<header>
+<h1 class="title">Официальная документация по языку Python</h1>
+<p class="author">Е.А. Роганов</p>
+<p class="date">v.4.1, 5 декабря 2021 года</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#the-python-tutorial">The Python Tutorial</a></li>
+</ul>
+</nav>
+<h3 id="введение">Введение</h3>
+<p>На сайте <a href="https://docs.python.org/3/">https://docs.python.org/3/</a> размещена официальная документация (на английском языке) к последней стабильной версии языка Python 3.</p>
+<p>Официального перевода на русский язык не делается. Неофициальные версии перевода можно найти в Сети, но следует знать, что</p>
+<ul>
+<li>перевод документации к последней версии языка обычно отсутствует;</li>
+<li>как и многие иные подобные тексты на русском языке переводы 
+официальной документации часто содержат опечатки и даже грубые ошибки.</li>
+</ul>
+<p>При этом отсутствие качественной русскоязычной документации не 
+является реальной проблемой, так как работа с языком Python возможна и в
+ случае полного незнания английского языка. А уже совсем небольших 
+знаний английского достаточно для чтения документации (к тому же есть и 
+Google Переводчик).</p>
+<h3 id="the-python-tutorial">The Python Tutorial</h3>
+<p>Сегодня мы познакомимся с разделами 3 и 4 <a href="https://docs.python.org/3/tutorial/index.html">руководства</a>,
+ которые описывают важнейшие типы данных языка Python и его базовые 
+управляющие конструкции. Приведённые в этих разделах примеры кода 
+иллюстрируют использование Python-интерпретатора. В случае размещения 
+программ в файлах применение описываемых конструкций не меняется.</p>
+<h4 id="числа-numbers">Числа (numbers)</h4>
+<p>Прежде всего нас интересуют типы <code>int</code>, <code>float</code> и <code>complex</code>. Посмотрите внимательно на примеры, приведённые в <a href="https://docs.python.org/3/tutorial/introduction.html#numbers">секции 3.1.1</a>.</p>
+<p>Обратите особое внимание на операции <code>/</code>, <code>//</code> и <code>%</code>.</p>
+<h4 id="строки-strings">Строки (strings)</h4>
+<p>Строкам посвящена <a href="https://docs.python.org/3/tutorial/introduction.html#strings">секция 3.1.2</a>.</p>
+<p>Здесь надо обратить внимание на операции конкатенации (<code>+</code>), повторения (<code>*</code>) и, особенно, <strong>вырезки (slicing)</strong>, а также функцию <code>len</code>.</p>
+<p>Вырезка <code>[start:stop:step]</code> имеет следующие важные свойства:</p>
+<ul>
+<li>положительные индексы начинаются с нуля (самый левый символ строки);</li>
+<li>отрицательные индексы «начинаются» с минус единицы (самый правый символ);</li>
+<li><code>start</code> всегда включается в вырезку, <code>stop</code> никогда не включается;</li>
+<li>отсутствующий <code>start</code> считается нулевым;</li>
+<li>отсутствующий <code>stop</code> считается равным размеру строки;</li>
+<li>отсутствующий <code>step</code> считается равным единице.</li>
+</ul>
+<p>Вот некоторые примеры:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s <span class="op">=</span> <span class="st">"0123456789"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="dv">1</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">'1'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">'8'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="dv">1</span>:<span class="dv">4</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">'123'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">'9876543210'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="dv">2</span>:<span class="dv">5</span>:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">''</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="dv">5</span>:<span class="dv">2</span>:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">'543'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> s[<span class="op">-</span><span class="dv">2</span>:<span class="op">-</span><span class="dv">6</span>:<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">'86'</span></span></code></pre></div>
+<h4 id="списки-lists">Списки (lists)</h4>
+<p><a href="https://docs.python.org/3/tutorial/introduction.html#lists">Списки</a> в языке Python являются своеобразными аналогами массивов в некоторых иных языках программирования.</p>
+<p>В отличие от <strong>неизменяемых (immutable)</strong> строк списки представляют собой <strong>изменяемый (mutable)</strong> тип данных: элементы списка можно изменять, их можно удалять и добавлять новые элементы в произвольную позицию.</p>
+<p>К спискам также применимы операции конкатенации, повторения и вырезки. С помощью присваивания <em>вырезке списка</em> можно:</p>
+<ul>
+<li><p>вставить в него другой список:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a[<span class="dv">1</span>:<span class="dv">1</span>] <span class="op">=</span> [<span class="dv">5</span>,<span class="dv">6</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div></li>
+<li><p>удалить из него подсписок:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a[<span class="dv">1</span>:<span class="dv">3</span>] <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code></pre></div></li>
+<li><p>заменить подсписок на другой список:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a[<span class="dv">1</span>:<span class="dv">4</span>] <span class="op">=</span> [<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> a</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">5</span>]</span></code></pre></div></li>
+</ul>
+<h4 id="уже-известные-нам-конструкции">Уже известные нам конструкции</h4>
+<p>Секции 3.2 и 4.1 содержат краткое описание уже знакомых нам функций и конструкций:</p>
+<ul>
+<li>операция множественного присваивания;</li>
+<li>цикл <code>while</code>;</li>
+<li>функция <code>print</code>;</li>
+<li>оператор <code>if</code> и его варианты <code>if/else</code> и <code>if/elif/else</code>.</li>
+</ul>
+<h4 id="функция-range-и-управляющие-конструкции-for-break-и-continue">Функция <code>range</code> и управляющие конструкции <code>for</code>, <code>break</code> и <code>continue</code></h4>
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">Секция 4.2</a> иллюстрирует также очень активно используемую конструкцию <code>for</code> (своеобразный цикл). Очень часто она используется в сочетании с функцией <code>range</code>, возвращающей диапазон (фрагмент арифметической прогрессии) чисел.</p>
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#the-range-function">Секция 4.3</a> содержит описание очень активно используемой функции <code>range</code>, которая в общем случае имеет вид <code>range(start, stop, step)</code>. Обратите внимание на тот факт, что для получения списка кроме вызова функции <code>range</code> необходим ещё и вызов функции <code>list</code>.</p>
+<p>В <a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">секции 4.4</a> описаны конструкции <code>break</code> и <code>continue</code>, позволяющие изменять нормальный ход выполнения циклов. <em>Заметьте, что конструкцию <code>else</code> для цикла <code>for</code> использовать не рекомендуется.</em></p>
+<h4 id="простейший-случай-определения-функции">Простейший случай определения функции</h4>
+<p>Функции полезны для устранения дублирования кода. При этом функции в 
+языке Python — достаточно сложные объекты. В данный момент мы собираемся
+ познакомиться лишь с самым простым вариантом определения функции, речь о
+ котором идёт в <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">секции 4.6</a>.</p>
+<p>Пока нам нужно лишь уметь определять функции с фиксированным числом аргументов с помощью ключевого слова <code>def</code> и вызывать их.</p>
+<br>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+
+
+</body></html>

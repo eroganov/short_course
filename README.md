@@ -55,7 +55,12 @@ Linux-компьютер — это способ установить Python с�
     - [**Numerical Programming** Overview of the Python modules numPy, SciPi, Pandas, and Matplotlib necessary to use Python efficiently for numerical purposes](https://python-course.eu/numerical-programming/)
     - [**Machine Learning** Examines computers' capability to automatically learn from data](https://python-course.eu/machine_learning.php)
 
-## Стартовые материалы
+## Первое занятие (6 декабря)
+
+- [Знакомство с языком Python](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/01/python1.html)
+- [Официальная документация по языку Python](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/01/python2.html)
+
+## Стартовые материалы (фаультативно)
 
 - [Вводная лекция для первокурсников-программистов](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
 - [Кое-что о SymPy](https://nbviewer.org/github/eroganov/short_course/blob/main/sympy.ipynb)
