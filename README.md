@@ -60,6 +60,13 @@ Linux-компьютер — это способ установить Python с�
 - [Знакомство с языком Python](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/01/python1.html)
 - [Официальная документация по языку Python](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/01/python2.html)
 
+## Второе занятие (10 декабря)
+
+- [Тестирование программ](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/02/pytest.html)
+- [Методы обработки информации и важнейшие свойства программ](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/02/iter_recurs.html)
+- [ Особенности представления чисел в компьютере](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/02/numbers.html)
+- [Примеры простых программ на языке Python](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/02/problems.html)
+
 ## Стартовые материалы (фаультативно)
 
 - [Вводная лекция для первокурсников-программистов](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/lecture.html)
