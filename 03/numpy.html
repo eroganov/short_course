@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Е.А. Роганов">
+  <title>Научные библиотеки языка Python. Знакомство с NumPy</title>
+  <link rel="stylesheet" href="numpy_files/Highlighting.css">
+  <link rel="stylesheet" href="numpy_files/markdown.css">
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+<br>
+<header>
+<h1 class="title">Научные библиотеки языка Python. Знакомство с NumPy</h1>
+<p class="author">Е.А. Роганов</p>
+<p class="date">v.4.6, 12 декабря 2021 года</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#научные-библиотеки-языка-python">Научные библиотеки языка Python</a></li>
+<li><a href="#библиотека-numpy">Библиотека NumPy</a></li>
+<li><a href="#сравнение-чистого-python-и-python-with-numpy">Сравнение «чистого Python» и «Python with NumPy»</a></li>
+</ul>
+</nav>
+<h3 id="научные-библиотеки-языка-python">Научные библиотеки языка Python</h3>
+<p>Как уже отмечалось, язык Python стал столь популярным в области 
+научных исследований благодаря наличию многочисленных библиотек (модулей
+ — modules). Их использование позволяет сочетать достоинства 
+объектно-ориентированного языка Python и эффективность выполнения 
+базовых методов этих библиотек, реализованных на компилируемых языках 
+C/C++.</p>
+<p>Вот как можно изобразить взаимосвязь между языком Python и основными научными библиотеками численных вычислений:</p>
+<p><img src="numpy_files/python_and_its_numerical_modules.png" style="width:8cm"></p>
+<p>NumPy — это библиотека (a module), предоставляющая такие базовые 
+структуры, как (многомерные) массивы и матрицы, и методы для их создания
+ и работы с ними.</p>
+<p>SciPy является расширением NumPy, так как использует структуры данных
+ этого модуля и содержит целый ряд дополнительных функций для работы с 
+ними.</p>
+<p>Matplotlib — библиотека для визуализации данных, получаемых в 
+результате работы программ на языке Python, предоставляющая удобный 
+интерфейс в случае использования модулей NumPy and SciPy.</p>
+<p>Всего 13 лет назад появилась первая версия библиотеки Pandas, которая
+ использует все вышеупомянутые модули. Pandas предназначена для 
+обработки и анализа данных (её название происходит от “panel data”).</p>
+<p>На вышеприведённом рисунке не показаны две следующие важные библиотеки, которые представляют самостоятельный интерес:</p>
+<div class="nonincremental">
+<ul>
+<li>SymPy — библиотека <em>символьных</em> вычислений, позволяющая «превратить» язык Python в систему компьютерной алгебры;</li>
+<li>Scikit-Learn — библиотека <em>машинного обучения</em> для языка программирования Python.</li>
+</ul>
+</div>
+<p>Напомним ещё раз, что все упомянутые библиотеки, как и интерпретатор 
+языка Python, относятся к категории свободных программных продуктов. Их 
+исходные коды доступны всем желающим, например, на сайте <a href="https://github.com/">GitHub</a>.</p>
+<h3 id="библиотека-numpy">Библиотека NumPy</h3>
+<p>На сайте <a href="https://docs.scipy.org/doc/numpy/">https://docs.scipy.org/doc/numpy/</a>
+ размещена официальная документация (на английском языке) к последней 
+стабильной версии библиотеки NumPy. Особенно полезным для начального 
+знакомства является <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">Quickstart tutorial</a>, содержащий описание основных методов работы с этой библиотекой. Исходные коды библиотеки NumPy на GitHub размещены по <a href="https://github.com/numpy/numpy">следующему URL</a>.</p>
+<p>Официального перевода на русский язык документации к библиотеке NumPy
+ не делается. Неофициальные версии перевода можно найти в Сети, но 
+следует помнить, что</p>
+<div class="nonincremental">
+<ul>
+<li>перевод последней версии документации обычно отсутствует;</li>
+<li>как и многие иные подобные тексты на русском языке, переводы 
+официальной документации часто содержат опечатки и даже грубые ошибки.</li>
+</ul>
+</div>
+<p>В Сети очень много материалов на английском языке, содержащих 
+описание научных библиотек языка Python, включая и библиотеку NumPy. 
+Одним из весьма неплохих подобных пособий является руководство <a href="https://www.python-course.eu/numerical_programming_with_python.php">Numerical Programming</a>, знакомство с которым рекомендуется.</p>
+<p>Заметим, что существует традиция подключать модуль (библиотеку) NumPy следующим образом:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<p>После этого вызов метода <code>array</code> этой библиотеки будет выполняться как <code>np.array</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="fl">2.7</span>, <span class="fl">2.71</span>, <span class="fl">2.718</span>, <span class="fl">2.71828</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array(lst)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Результат работы этой программы таков:</p>
+<pre><code>[2.7     2.71    2.718   2.71828]
+[5.4     5.42    5.436   5.43656]</code></pre>
+<p>Этот пример иллюстрирует работу так называемых «векторных» операций 
+библиотеки NumPy (в данном случае умножения элементов массива на число).</p>
+<p>Некоторые примеры использования различных методов модуля NumPy приведены в виде <a href="https://edu-support.mephi.ru/materials/207/html/fpk/03/numpy.ipynb?to=ipynb">notebook-кода</a>. Значительно большее количество примеров работы с библиотекой NumPy можно найти по указанным выше ссылкам на <a href="https://docs.scipy.org/doc/numpy/user/quickstart.html">официальную документацию</a> и руководству по использованию <a href="https://www.python-course.eu/numpy_numerical_operations_on_numpy_arrays.php">операций над массивами в NumPy</a>.</p>
+<h3 id="сравнение-чистого-python-и-python-with-numpy">Сравнение «чистого Python» и «Python with NumPy»</h3>
+<p>Достоинства «чистого Python»:</p>
+<div class="nonincremental">
+<ul>
+<li>возможность работы с числами, как с объектами, что очень удобно;</li>
+<li>возможность использования контейнеров, способных содержать объекты 
+разных типов; наличие многочисленных методов работы с этими 
+контейнерами; возможность быстрого поиска информации с помощью словарей.</li>
+</ul>
+</div>
+<p>Достоинства «Python with NumPy»:</p>
+<div class="nonincremental">
+<ul>
+<li>возможность использования быстрых (массовых) операций над массивами;</li>
+<li>ориентированность на научные вычисления.</li>
+</ul>
+</div>
+<p>С помощью библиотеки NumPy можно уменьшить объём необходимой 
+программе оперативной памяти и, что особенно важно, значительно 
+сократить время её работы. Считается, что в среднем время сокращается 
+примерно в 50 раз, хотя на различных программах выигрыш может составлять
+ от 10 до 100 раз. Вот показательный пример:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>size_of_vec <span class="op">=</span> <span class="dv">500_000</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pure_python_version():</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> <span class="bu">range</span>(size_of_vec)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> <span class="bu">range</span>(size_of_vec)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">=</span> time.time()</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    Z <span class="op">=</span> [X[i] <span class="op">+</span> Y[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(X))]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    t2 <span class="op">=</span> time.time()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t2 <span class="op">-</span> t1</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> numpy_version():</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> np.arange(size_of_vec)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    Y <span class="op">=</span> np.arange(size_of_vec)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">=</span> time.time()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    Z <span class="op">=</span> X <span class="op">+</span> Y</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    t2 <span class="op">=</span> time.time()</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t2 <span class="op">-</span> t1</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> pure_python_version()</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> numpy_version()</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(t1, <span class="dv">4</span>), <span class="bu">round</span>(t2, <span class="dv">4</span>))</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Numpy in this example </span><span class="sc">{</span><span class="bu">round</span>(t1<span class="op">/</span>t2)<span class="sc">}</span><span class="ss"> times faster than pure python"</span>)</span></code></pre></div>
+<blockquote>
+<p>Обязательно выполните эту программу, чтобы увидеть выигрыш!</p>
+</blockquote>
+<br>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+
+
+</body></html>
