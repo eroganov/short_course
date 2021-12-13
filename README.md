@@ -72,7 +72,7 @@ Linux-компьютер — это способ установить Python с�
 - [Python — язык объектно-ориентированного программирования](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/03/oop.html)
 - [Научные библиотеки языка Python. Знакомство с NumPy](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/03/numpy.html)
 - [Знакомство с библиотекой NumPy](https://nbviewer.org/github/eroganov/short_course/blob/main/03/numpy.ipynb)
-- [Знакомство с библиотекой NumPy](https://colab.research.google.com/github/eroganov/short_course/blob/main/03/numpy.ipynb)
+- [Знакомство с библиотекой NumPy (на colab)](https://colab.research.google.com/github/eroganov/short_course/blob/main/03/numpy.ipynb)
 
 ## Стартовые материалы (фаультативно)
 
