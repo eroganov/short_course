@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Е.А. Роганов">
+  <title>Краткое знакомство с библиотекой Matplotlib</title>
+  <link rel="stylesheet" href="matplotlib_files/Highlighting.css">
+  <link rel="stylesheet" href="matplotlib_files/markdown.css">
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+<br>
+<header>
+<h1 class="title">Краткое знакомство с библиотекой Matplotlib</h1>
+<p class="author">Е.А. Роганов</p>
+<p class="date">v.4.8, 15 декабря 2021 года</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#первый-рисунок">Первый рисунок</a></li>
+<li><a href="#структура-рисунка">Структура рисунка</a></li>
+<li><a href="#примеры">Примеры</a></li>
+</ul>
+</nav>
+<h3 id="введение">Введение</h3>
+<p><a href="https://matplotlib.org/">Matplotlib</a>&nbsp;— 
+межплатформенная библиотека для визуализации данных, предназначенная для
+ создания изображений публикационного качества в различных форматах. Она
+ позволяет создавать графики, гистограммы, диаграммы ошибок, диаграммы 
+рассеяния и многое иное с помощью всего нескольких строк кода на языке 
+Python (см. <a href="https://matplotlib.org/stable/gallery/index.html">«Галерея миниатюр»</a>).</p>
+<p>Официальная документация доступна на сайте библиотеки. Особенно полезны <a href="https://matplotlib.org/stable/tutorials/index.html">руководства различных уровней сложности</a>.</p>
+<p>В Сети очень много описывающих использование библиотеки Matplotlib источников информации, среди которых и пособие <a href="https://www.python-course.eu/">Numerical Programming</a>. Раздел <a href="https://www.python-course.eu/matplotlib.php">Matplotlib Tutorial</a> этого руководства посвящён начальному знакомству с библиотекой.</p>
+<h3 id="первый-рисунок">Первый рисунок</h3>
+<p>В простейших случаях с библиотекой Matplotlib можно работать, используя модуль <code>matplotlib.pyplot</code>,
+ позволяющий создавать рисунок и добавлять на него такие элементы как 
+линии, графические изображения, текст и другие объекты. При 
+необходимости можно использовать объектно-ориентированный подход, 
+предоставляющий возможность полного контроля над компонентами 
+создаваемого рисунка в более удобном виде.</p>
+<p>Подключение библиотеки традиционно осуществляется с помощью следующей команды.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+<p>Простейшая программа, изображающая график кусочно-линейной функции, может быть такой:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="fl">4.5</span>, <span class="dv">16</span>, <span class="dv">23</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p>Запуск этой программы приводит к открытию нового окна с графиком:</p>
+<p><img src="matplotlib_files/plot01.png"></p>
+<p>Панель инструментов появившегося окна позволяет производить различные
+ манипуляции с графиком: изменять масштаб всего изображения или его 
+части (zoom) и позицию в окне просмотра (pan), параметры визуализации 
+осей, линий и включённых в график изображений, сохранять график в 
+различных форматах.</p>
+<h3 id="структура-рисунка">Структура рисунка</h3>
+<p>Рисунок в Matplotlib состоит из нескольких компонент:</p>
+<p><img src="matplotlib_files/anatomy.png"></p>
+<p>Обычно на <em>рисунке (figure)</em> присутствуют:</p>
+<div class="nonincremental">
+<ul>
+<li>одна или несколько <em>областей рисования (axes)</em>,</li>
+<li>заголовки, легенда (пояснение в виде таблички с отрезками линий и справочными надписями) и иные вспомогательные элементы&nbsp;— <em>artists</em>,</li>
+<li><em>холст (canvas)</em>, в непосредственном взаимодействии с которым пользователь библиотеки обычно не нуждается.</li>
+</ul>
+</div>
+<p>Область рисования (axes)&nbsp;— один из основных объектов. Именно его следует ассоциировать с функцией <code>plot</code>,
+ используемой для построения графиков многих видов. Каждая из областей 
+рисования содержит две (или три для трёхмерных графиков) координатные <em>оси (axis)</em>. Границы изменения изображаемых данных определяются методами <code>set_xlim</code> и <code>set_ylim</code> области рисования. Область рисования имеет заголовок (задаваемый методом <code>set_title</code>) и <em>названия (labels)</em> осей (определяемые методами <code>set_xlabel</code> и <code>set_ylabel</code>).</p>
+<p>На оси (axis) наносятся <em>деления (ticks)</em> (<em>большие (major)</em> и <em>малые (minor)</em>) и <em>подписи (ticklabels)</em> к ним. Расположение делений определяется объектом <code>Locator</code>, а за подписи делений «отвечает» <code>Formatter</code>. Умение работать с этими классами обеспечивает полный контроль над визуализацией осей координат.</p>
+<p>Кроме уже перечисленных объектов на вышеприведённом рисунке мы видим <em>сетку (grid)</em>, <em>линии (lines)</em>, <em>маркеры (markers)</em> и <em>spines</em>&nbsp;— линии, обозначающие границы области данных.</p>
+<h3 id="примеры">Примеры</h3>
+<p>Дальнейшие примеры работы с библиотекой Matplotlib мы будем рассматривать, используя <a href="https://edu-support.mephi.ru/materials/207/html/fpk/04/matplotlib.ipynb?to=ipynb">блокнот</a>.</p>
+<br>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+
+
+</body></html>
