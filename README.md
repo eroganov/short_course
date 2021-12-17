@@ -76,11 +76,11 @@ Linux-компьютер — это способ установить Python с�
 
 ## Четвёртое занятие (17 декабря)
 
-- [Работа с библиотекой NumPy](https://nbviewer.org/github/eroganov/short_course/blob/main/04/particles.ipynb)
+- [Работа с библиотекой NumPy](https://nbviewer.org/github/eroganov/short_course/blob/main/04/particles.pynb)
 - [Краткое знакомство с библиотекой SciPy](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/04/scipy.html)
 - [Пример использования функции optimize.curve_fit](https://nbviewer.org/github/eroganov/short_course/blob/main/04/curve_fit.ipynb)
 - [Краткое знакомство с библиотекой Matplotlib](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/04/matplotlib.html)
-- [Работа с библиотекой Matplotlib](https://colab.research.google.com/github/eroganov/short_course/blob/main/04/matplotlib.ipynb)
+- [Работа с библиотекой Matplotlib](https://nbviewer.org/github/eroganov/short_course/blob/main/04/matplotlib.ipynb)
 
 ## Стартовые материалы (фаультативно)
 
