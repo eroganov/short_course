@@ -85,10 +85,10 @@ Linux-компьютер — это способ установить Python с�
 ## Пятое занятие (20 декабря)
 
 - [Краткое знакомство с Pandas](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/05/pandas.html)
-- [Продолжение знакомства с библиотекой Pandas (на gihub)](https://github.com/eroganov/short_course/blob/main/05/pandas.ipynb)
-- [Обработка данных NHL с помощью Pandas (на gihub)](https://github.com/eroganov/short_course/blob/main/05/practice.ipynb)
-- [Pandas и Matplotlib (на gihub)](https://github.com/eroganov/short_course/blob/main/05/misc.ipynb)
-- [Pandas, Matplotlib и Seaborn (на gihub)](https://github.com/eroganov/short_course/blob/main/05/DemographicData.ipynb)
+- [Продолжение знакомства с библиотекой Pandas (на github)](https://github.com/eroganov/short_course/blob/main/05/pandas.ipynb)
+- [Обработка данных NHL с помощью Pandas (на github)](https://github.com/eroganov/short_course/blob/main/05/practice.ipynb)
+- [Pandas и Matplotlib (на github)](https://github.com/eroganov/short_course/blob/main/05/misc.ipynb)
+- [Pandas, Matplotlib и Seaborn (на github)](https://github.com/eroganov/short_course/blob/main/05/DemographicData.ipynb)
 
 
 ## Стартовые материалы (фаультативно)
