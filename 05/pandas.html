@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Е.А. Роганов">
+  <title>Краткое знакомство с Pandas</title>
+  <link rel="stylesheet" href="pandas_files/markdown.css">
+  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+<br>
+<header>
+<h1 class="title">Краткое знакомство с Pandas</h1>
+<p class="author">Е.А. Роганов</p>
+<p class="date">v.3.5, 19 декабря 2021 года</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#введение">Введение</a></li>
+<li><a href="#открытые-данные">Открытые данные</a></li>
+<li><a href="#примеры-работы-с-pandas">Примеры работы с Pandas</a></li>
+</ul>
+</nav>
+<h3 id="введение">Введение</h3>
+<p>Напомним взаимосвязь основных научных библиотек языка Python:</p>
+<p><img src="pandas_files/python_and_its_numerical_modules.png" style="width:20.0%"></p>
+<p>Pandas (название происходит не от наименования животного, а является 
+сокращением слов “panel data”&nbsp;— «табличные данные») создавалась 
+прежде всего для обеспечения быстрой и удобной работы с более сложными 
+структурами данных, чем просто многомерные массивы. Последнее, как мы 
+уже знаем, вполне реализуемо и с помощью библиотеки NumPy.</p>
+<p>За 12 лет развития библиотеки (модуля) Pandas в неё были добавлены 
+многочисленные иные возможности и в настоящее время она рассматривается 
+прежде всего как инструмент для работы с «большими данными» (Big Data) и
+ основы для «машинного обучения» (Machine Learning). Вот что можно 
+прочитать на <a href="http://pandas.pydata.org/pandas-docs/stable/">официальном сайте</a> этой библиотеки (это не дословный и весьма сокращённый перевод).</p>
+<p>Pandas приспособлена для работы с табличными данными, подобными SQL 
+или Excel-таблицам. С её помощью удобно обрабатывать временны́е ряды 
+(time series data)&nbsp;— собранные в разные моменты времени 
+статистические данные о значениях каких-либо параметров. Двумя основными
+ структурами данных, которые предоставляет библиотека Pandas, являются <code>Series</code> (одномерная структура) и <code>DataFrame</code> (двумерная структура).</p>
+<p>Pandas <strong>основана на NumPy</strong>. Её базовые алгоритмы 
+реализованы на языке Cython (язык программирования, упрощающий написание
+ модулей С/С++ кода для Python) и поэтому библиотека <strong>Pandas быстрая</strong>. Кроме научных исследований <strong>Pandas</strong> активно <strong>используется в реально эксплуатируемых финансовых приложениях</strong>.</p>
+<h3 id="открытые-данные">Открытые данные</h3>
+<p>Из <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5">Википедии</a>:</p>
+<p>«Открытые данные (англ. open data) — концепция, отражающая идею о 
+том, что определённые данные должны быть свободно доступны для 
+машиночитаемого использования и дальнейшей републикации без ограничений 
+авторского права, патентов и других механизмов контроля.»</p>
+<h4 id="некоторые-порталы-открытых-данных">Некоторые порталы открытых данных</h4>
+<div class="nonincremental">
+<ul>
+<li><a href="https://data.gov.ru/">Портал открытых данных Российской Федерации</a></li>
+<li><a href="https://minobrnauki.gov.ru/opendata/">Открытые данные министерства образования и науки Российской Федерации</a></li>
+<li><a href="https://data.mos.ru/opendata">Портал открытых данных Правительства Москвы</a></li>
+<li><a href="https://www.data.gov/">The home of the U.S. Government’s open data</a></li>
+<li><a href="https://www.kaggle.com/">Kaggle is the place to do data science projects</a></li>
+</ul>
+</div>
+<p>Заглянем в раздел <a href="https://data.gov.ru/taxonomy/term/8/datasets">«Образование» портала открытых данных Российской Федерации</a>.
+ Наборов данных там довольно много, но они в основном достаточно старые и
+ представляют собой таблицы из очень небольшого числа строк и столбцов. 
+Посмотрим на набор, размещённый по второй ссылке: <a href="https://data.gov.ru/opendata/7017069388-avtoshkoly">Информация об образовательных учреждениях Томской области, осуществляющих профессиональную подготовку водителей</a>. Соответствующий csv-файл содержит 6 колонок и чуть более 50 строк.</p>
+<p>Сайту kaggle.com мы уделим особое внимание. На нём содержатся не 
+только открытые данные, но и программный код (на различных языках, 
+включая Python), который может быть выполнен непосредственно на этом 
+сайте.</p>
+<p>Интересный относительно простой пример исследования данных об 
+автомобильных авариях, реализованный в виде блокнота (Jupyter Notebook) 
+на сайте kaggle.com, который использует в основном библиотеки Pandas и 
+Matplotlib: <a href="https://www.kaggle.com/sxiaohuang/car-accidents-visualizations-and-analyses">Car accidents: Visualizations and analyses</a>. Можем скопировать Notebook и, например, узнать количество строк в загружаемом csv-файле.</p>
+<p>NHL Game Data посвятим отдельный раздел и не только посмотрим на эти 
+данные на сайте kaggle.com. Мы покажем, как можно использовать 
+возможности Pandas и Matplotlib на примере работы с одним из csv-файлов,
+ скаченных с указанного сайта.</p>
+<h4 id="nhl-game-data">NHL Game Data</h4>
+<p>Разнообразные открытые данные об играх и игроках NHL размещены по следующему URL: <a href="https://www.kaggle.com/martinellis/nhl-game-data">https://www.kaggle.com/martinellis/nhl-game-data</a>. Общий объём таблиц с данными превышает полтора гигабайта:</p>
+<div class="nonincremental">
+<ul>
+<li>game.csv</li>
+<li>game_goalie_stats.csv</li>
+<li>game_goals.csv</li>
+<li>game_officials.csv</li>
+<li>game_penalties.csv</li>
+<li>game_plays.csv</li>
+<li>game_plays_players.csv</li>
+<li>game_scratches.csv</li>
+<li>game_shifts.csv</li>
+<li>game_skater_stats.csv</li>
+<li>game_teams_stats.csv</li>
+<li>player_info.csv</li>
+<li>team_info.csv</li>
+</ul>
+</div>
+<p>Все эти таблицы взаимосвязаны между собой:</p>
+<p><img src="pandas_files/table_relationships.JPG" style="width:90.0%"></p>
+<p>Мы ограничимся работой с одной из самых небольших таблиц — таблицей, 
+содержащей общую информацию об игроках NHL: player_info.csv, которая 
+занимает всего 389.69 kB.</p>
+<p>На самом сайте мы сначала посмотрим на вкладки “Compact” и “Column” 
+страницы, содержащей таблицу player_info.csv, а затем подробно обсудим 
+некоторые из предоставляемых Pandas и Matplotlib возможностей, которые 
+позволяют анализировать данные этой таблицы.</p>
+<h3 id="примеры-работы-с-pandas">Примеры работы с Pandas</h3>
+<p>Некоторые примеры использования различных возможностей библиотеки Pandas приведены в виде <a href="https://edu-support.mephi.ru/materials/207/html/fpk/05/pandas.ipynb?to=ipynb">notebook-кода</a>. Значительно большее количество примеров работы с этой библиотекой можно найти в <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">руководствах пользователя</a> на официальном сайте, <a href="https://www.python-course.eu/pandas.php">руководстве по использованию Pandas</a> на рекомендованном ранее сайте www.python-course.eu и на иных информационных ресурсах Сети.</p>
+<br>
+<h3><a href="https://edu-support.mephi.ru/">«Подспорье» (edu-support.mephi.ru)</a></h3>
+
+
+</body></html>
