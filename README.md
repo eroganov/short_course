@@ -88,7 +88,7 @@ Linux-компьютер — это способ установить Python с�
 - [Продолжение знакомства с библиотекой Pandas (на gihub)](https://github.com/eroganov/short_course/blob/main/05/pandas.ipynb)
 - [Обработка данных NHL с помощью Pandas (на gihub)](https://github.com/eroganov/short_course/blob/main/05/practice.ipynb)
 - [Pandas и Matplotlib (на gihub)](https://github.com/eroganov/short_course/blob/main/05/misc.ipynb)
-- [Pandas, Matplotlib и Seaborn (на gihub)](https://github.com/eroganov/short_course/blob/main/05/ DemographicData.ipynb)
+- [Pandas, Matplotlib и Seaborn (на gihub)](https://github.com/eroganov/short_course/blob/main/05/DemographicData.ipynb)
 
 
 ## Стартовые материалы (фаультативно)
