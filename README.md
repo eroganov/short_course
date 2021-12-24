@@ -90,6 +90,10 @@ Linux-компьютер — это способ установить Python с�
 - [Pandas и Matplotlib (на github)](https://github.com/eroganov/short_course/blob/main/05/misc.ipynb)
 - [Pandas, Matplotlib и Seaborn (на github)](https://github.com/eroganov/short_course/blob/main/05/DemographicData.ipynb)
 
+## Шестов занятие (24 декабря)
+
+- [Что такое машинное обучение?](https://htmlpreview.github.io/?https://github.com/eroganov/short_course/blob/main/06/main.html)
+- [Обработка данных о пассажирах «Титаника» (на github)](https://github.com/eroganov/short_course/blob/main/06/titanic.ipynb)
 
 ## Стартовые материалы (фаультативно)
 
